@@ -3,6 +3,26 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Intersection observer</title>
+    <style>
+      .navbar {
+        position: relative;
+        background-color: white;
+        color: black;
+        transition: all 0.3s ease-out;
+      }
+
+      .navbar.fixed-top {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+      }
+
+      .navbar.fixed-top a {
+        color: white;
+      }
+    </style>
   </head>
 
   <body>
@@ -15,8 +35,24 @@
           <li><a href="/sticky.html">Position sticky</a></li>
         </ul>
       </nav>
+      <div class="spot"></div>
       <div id="content">With Intersection observer</div>
     </div>
-    <script src="js/index.js"></script>
+    <script>
+      const navbar = document.querySelector(".navbar");
+      const spot = document.querySelector(".spot");
+      const handleScroll = entries => {
+        const spotIsVisible = entries[0].isIntersecting;
+        if (spotIsVisible) navbar.classList.remove("fixed-top");
+        else navbar.classList.add("fixed-top");
+      };
+      const options = {
+        root: null,
+        rootMargin: "0px",
+        threshhold: 1
+      };
+      const observer = new IntersectionObserver(handleScroll, options);
+      observer.observe(spot);
+    </script>
   </body>
 </html>

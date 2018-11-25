@@ -6,8 +6,8 @@ body {
 
 #app {
   height: 200vh;
-  background-color: #1d1d1d;
-  color: #fff;
+  background-color: beige;
+  color: #1d1d1d;
 }
 
 #content {
@@ -37,4 +37,5 @@ body {
 
 .navbar a {
   text-decoration: none;
+  color: black;
 }

@@ -3,6 +3,27 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Position sticky</title>
+    <style>
+      .navbar {
+        position: sticky;
+        top: 0;
+        background-color: transparent;
+      }
+
+      #content {
+        background-color: aquamarine;
+      }
+      #another-sticky {
+        position: sticky;
+        top: 100px;
+        background-color: blueviolet;
+      }
+      #more-content {
+        background-color: #1d1d1d;
+        color: whitesmoke;
+        height: 150vh;
+      }
+    </style>
   </head>
 
   <body>
@@ -16,7 +37,8 @@
         </ul>
       </nav>
       <div id="content">With Position sticky</div>
+      <div id="another-sticky">I'm sticky too!</div>
+      <div id="more-content">With Position sticky</div>
     </div>
-    <script src="js/index.js"></script>
   </body>
 </html>

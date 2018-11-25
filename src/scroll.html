@@ -3,6 +3,26 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/style.css" />
     <title>With scroll event</title>
+    <style>
+      .navbar {
+        position: relative;
+        background-color: white;
+        color: black;
+        transition: all 0.3s ease-out;
+      }
+
+      .navbar.fixed-top {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+      }
+
+      .navbar.fixed-top a {
+        color: white;
+      }
+    </style>
   </head>
 
   <body>
@@ -17,6 +37,16 @@
       </nav>
       <div id="content">With scroll event</div>
     </div>
-    <script src="js/index.js"></script>
+    <script>
+      document.addEventListener("scroll", function() {
+        const distanceFromTop = Math.abs(
+          document.body.getBoundingClientRect().top
+        );
+        const navbarHeight = 100;
+        const navbar = document.querySelector(".navbar");
+        if (distanceFromTop >= navbarHeight) navbar.classList.add("fixed-top");
+        else navbar.classList.remove("fixed-top");
+      });
+    </script>
   </body>
 </html>
