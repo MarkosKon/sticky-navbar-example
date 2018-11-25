@@ -1,0 +1,40 @@
+/* Don't pay attention to those styles... */
+
+body {
+  margin: 0;
+}
+
+#app {
+  height: 200vh;
+  background-color: #1d1d1d;
+  color: #fff;
+}
+
+#content {
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  background-color: #fff;
+  color: #000;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar li {
+  margin-left: 25px;
+}
+
+.navbar a {
+  text-decoration: none;
+}
